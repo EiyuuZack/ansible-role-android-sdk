@@ -14,14 +14,8 @@
     path: ~/.android/repositories.cfg
     state: touch
 
-- name: Ensure android-sdk licenses are accepted
-  shell: bash -lc "yes | sdkmanager --sdk_root={{ ansible_env.HOME }}/.android-sdk --licenses"
-
-- name: Ensure base tools are updated
-  shell: bash -lc "sdkmanager --sdk_root={{ ansible_env.HOME }}/.android-sdk \"tools\"" # installs tools, platform-tools, emulator and intel haxm
-
-- name: Ensure specified platforms and build-tools are installed
-  shell: bash -lc "sdkmanager --sdk_root={{ ansible_env.HOME }}/.android-sdk \"{{ item }}\""
+- name: Ensure specified packages are installed
+  shell: $SHELL -lc "echo y | sdkmanager --sdk_root={{ ansible_env.HOME }}/.android-sdk \"{{ item }}\""
   loop: "{{ android_sdk_packages }}"
 
 - name: Ensure android-sdk is added to profile system-wide
