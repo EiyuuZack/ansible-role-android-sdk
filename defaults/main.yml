@@ -1,0 +1,6 @@
+---
+android_sdk_packages:
+  - build-tools;23.0.3
+  - build-tools;28.0.0
+  - platforms;android-23
+  - platforms;android-26
