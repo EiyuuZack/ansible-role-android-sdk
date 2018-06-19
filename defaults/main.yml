@@ -4,6 +4,7 @@ android_sdk_packages:
   - tools # must be second
   - extras;android;m2repository # will be added by android-studio if absent
   - extras;google;m2repository # will be added by android-studio if absent
+  - extras;google;google_play_services
   - build-tools;23.0.3
   - build-tools;28.0.0
   - platforms;android-23
