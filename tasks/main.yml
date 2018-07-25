@@ -1,4 +1,10 @@
 ---
+# Standalone installation is required for builds using buildtools 26 and later
+- name: Ensure gradle is installed
+  homebrew:
+    name: gradle
+    state: present
+
 - name: Ensure android-sdk is installed
   homebrew_cask:
     name: android-sdk
