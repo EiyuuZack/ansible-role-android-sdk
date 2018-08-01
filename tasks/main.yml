@@ -20,6 +20,11 @@
     path: ~/.android/repositories.cfg
     state: touch
 
+- name: Ensure ~/.android-sdk is nuked
+  file:
+    path: ~/.android-sdk
+    state: absent
+
 - name: Ensure specified packages are installed
   shell: $SHELL -lc "echo y | sdkmanager --sdk_root={{ ansible_env.HOME }}/.android-sdk \"{{ item }}\""
   loop: "{{ android_sdk_packages }}"
