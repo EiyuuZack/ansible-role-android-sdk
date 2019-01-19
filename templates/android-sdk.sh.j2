@@ -1,6 +1,7 @@
 if [ -d "$HOME/.android-sdk" ]; then
   export ANDROID_SDK_ROOT=$HOME/.android-sdk
-  export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+  # Since version 25.3.0 emulator resides in ANDROID_SDK_ROOT/emulator
+  export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
   # For backwards compatibility
   export ANDROID_HOME=$ANDROID_SDK_ROOT
   # Make sure sdkmanager operates in ANDROID_SDK_ROOT by default
