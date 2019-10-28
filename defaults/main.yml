@@ -5,7 +5,11 @@ android_sdk_packages:
   - extras;android;m2repository # will be added by android-studio if absent
   - extras;google;m2repository # will be added by android-studio if absent
   - extras;google;google_play_services
+  - emulator
   - system-images;android-26;google_apis_playstore;x86 # Google Play ready image
-  - build-tools;26.0.2
-  - build-tools;28.0.1
+  - system-images;android-28;google_apis_playstore;x86 # Google Play ready image
+  - system-images;android-29;google_apis_playstore;x86 # Google Play ready image
+  - build-tools;29.0.2
   - platforms;android-26
+  - platforms;android-28
+  - platforms;android-29
