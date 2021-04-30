@@ -31,7 +31,7 @@
 
 - name: Ensure android-sdk is added to profile system-wide
   blockinfile:
-    path: /etc/profile
+    path: /etc/zprofile
     block: "{{ lookup('template', 'android-sdk.sh.j2') }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK -- ANDROID-SDK"
   become: yes
