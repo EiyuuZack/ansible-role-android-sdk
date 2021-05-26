@@ -11,3 +11,5 @@ android_sdk_packages:
   - build-tools;30.0.3
   - platforms;android-29
   - platforms;android-30
+  - sources;android-29
+  - sources;android-30
