@@ -5,9 +5,9 @@
     name: gradle
     state: present
 
-- name: Ensure android-sdk is installed
+- name: Ensure android-commandlinetools is installed
   homebrew_cask:
-    name: android-sdk
+    name: android-commandlinetools
     state: present
 
 - name: Ensure ~/.android is created
