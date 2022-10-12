@@ -6,8 +6,8 @@ android_sdk_packages:
   - extras;google;m2repository # will be added by android-studio if absent
   - extras;google;google_play_services
   #- system-images;android-30;google_apis_playstore;x86 # Google Play ready image
-  - build-tools;31.0.0
-  - platforms;android-30
+  - build-tools;33.0.0
   - platforms;android-31
-  - sources;android-30
+  - platforms;android-32
   - sources;android-31
+  - sources;android-32

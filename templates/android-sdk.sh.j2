@@ -3,6 +3,6 @@ if [ -d "$HOME/.android-sdk" ]; then
   export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
   # Make sure sdkmanager operates in ANDROID_SDK_ROOT by default (in case the contents of $HOME/.android-sdk are nuked)
   alias sdkmanager="sdkmanager --sdk_root=$ANDROID_SDK_ROOT"
-  # Temporary workaround to support older build-tools alongside 31.0.0
-  ln -sf $ANDROID_SDK_ROOT/build-tools/31.0.0/d8 $ANDROID_SDK_ROOT/build-tools/31.0.0/dx ; ln -sf $ANDROID_SDK_ROOT/build-tools/31.0.0/lib/d8.jar $ANDROID_SDK_ROOT/build-tools/31.0.0/lib/dx.jar
+  # Temporary workaround to support older build-tools alongside 33.0.0
+  ln -sf $ANDROID_SDK_ROOT/build-tools/33.0.0/d8 $ANDROID_SDK_ROOT/build-tools/33.0.0/dx ; ln -sf $ANDROID_SDK_ROOT/build-tools/33.0.0/lib/d8.jar $ANDROID_SDK_ROOT/build-tools/33.0.0/lib/dx.jar
 fi
