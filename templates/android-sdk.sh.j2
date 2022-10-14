@@ -1,8 +1,10 @@
 if [ -d "$HOME/.android-sdk" ]; then
-  export ANDROID_SDK_ROOT=$HOME/.android-sdk
-  export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
-  # Make sure sdkmanager operates in ANDROID_SDK_ROOT by default (in case the contents of $HOME/.android-sdk are nuked)
-  alias sdkmanager="sdkmanager --sdk_root=$ANDROID_SDK_ROOT"
+  export ANDROID_HOME=$HOME/.android-sdk
+  # For backwards compatibility
+  export ANDROID_SDK_ROOT=$ANDROID_HOME
+  export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
+  # Make sure sdkmanager operates in ANDROID_HOME by default (in case the contents of $HOME/.android-sdk are nuked)
+  alias sdkmanager="sdkmanager --sdk_root=$ANDROID_HOME"
   # Temporary workaround to support older build-tools alongside 33.0.0
-  ln -sf $ANDROID_SDK_ROOT/build-tools/33.0.0/d8 $ANDROID_SDK_ROOT/build-tools/33.0.0/dx ; ln -sf $ANDROID_SDK_ROOT/build-tools/33.0.0/lib/d8.jar $ANDROID_SDK_ROOT/build-tools/33.0.0/lib/dx.jar
+  ln -sf $ANDROID_HOME/build-tools/33.0.0/d8 $ANDROID_HOME/build-tools/33.0.0/dx ; ln -sf $ANDROID_HOME/build-tools/33.0.0/lib/d8.jar $ANDROID_HOME/build-tools/33.0.0/lib/dx.jar
 fi
