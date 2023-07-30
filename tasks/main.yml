@@ -29,9 +29,8 @@
   shell: $SHELL -lc "echo y | sdkmanager --sdk_root={{ ansible_env.HOME }}/.android-sdk \"{{ item }}\""
   loop: "{{ android_sdk_packages }}"
 
-- name: Ensure android-sdk is added to profile system-wide
+- name: Ensure android-sdk is added to user's profile
   blockinfile:
-    path: /etc/zprofile
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.zprofile"
     block: "{{ lookup('template', 'android-sdk.sh.j2') }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK -- ANDROID-SDK"
-  become: yes
